@@ -9,8 +9,11 @@ import functools
 import jwt
 
 # pylint: disable=import-error
-from flask import Flask, jsonify, request, abort
+from markupsafe import escape
 
+from flask import jsonify, request, abort
+
+from flask import Flask
 
 JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
 LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
